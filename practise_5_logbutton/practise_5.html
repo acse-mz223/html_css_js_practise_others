@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./practise_5.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-board">
+            <div class="logo">J</div>
+            <h2 class="title">Welcone to JACK </h2>
+            <h4 class="sub-title">Log in to your account</h4>
+            <form class="login-form" action="#" method="post" >
+                <div class="login-form-input">
+                    <label class="login-form-input-label">Username</label>
+                    <input class="input" type="text">                    
+                </div>
+                <div>
+                    <div class="login-form-input">
+                        <label class="login-form-input-label">Password</label>
+                        <input class="input" type="password">                    
+                    </div>
+                </div>
+                <button class="submit" type="submit">
+                    <div class="submit-text">Login</div>
+                    <div class="submit-loader hidden">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </button>
+            </form>
+            <footer class="footer">
+                Don't have an account?
+                <a href="xx">Sign Up</a>
+            </footer>
+        </div>
+        <video class="login-video" src="./video-1@c.mp4" autoplay loop muted></video>
+    </div>
+
+    <script>
+        const submitButton = document.querySelector(".submit")
+        const submitButtonText = document.querySelector(".submit-text")
+        const submitButtonLoader = document.querySelector(".submit-loader")
+        submitButton.addEventListener('click', (event)=>{
+            event.preventDefault()
+            submitButtonText.classList.add("hidden")
+            submitButtonLoader.classList.remove("hidden")
+            setTimeout(() =>{
+                submitButtonText.classList.remove("hidden")
+                submitButtonLoader.classList.add("hidden")
+            },4000)
+        })
+    </script>
+</body>
+</html>

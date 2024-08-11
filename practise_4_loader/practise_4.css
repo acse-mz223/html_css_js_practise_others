@@ -1,0 +1,32 @@
+.loader-container{
+    position: fixed;
+    inset: 0;
+    background-color: antiquewhite;
+    display: grid;
+    place-content: center;
+}
+
+.loader-text{
+    animation: 5s ease-in-out loader infinite alternate;
+}
+
+@keyframes loader {
+    0%{
+        stroke: black;
+        fill: transparent;
+        stroke-dashoffset: 25%;
+        stroke-dasharray: 0 32%;
+        stroke-width: 9;
+    }
+    50%{
+        fill: transparent;
+        stroke-width: 9;
+    }
+    80%,100%{
+        stroke: transparent;   
+        stroke-width: 0; 
+        fill: black;    
+        stroke-dashoffset: -25%;
+        stroke-dasharray: 32% 0;        
+    }
+}
