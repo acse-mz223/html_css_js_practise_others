@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practise_7</title>
+    <link rel="stylesheet" href="./practise_7.css">
+</head>
+<body>
+    <div>
+        Welcome come to this 
+        <span id="typewriter"></span>
+        <span id="cursor">|</span>
+        World
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>
+    <script>
+        const words = ["new", "old", "fantasy", "dark"]
+        //main tineline
+        const mainTimeLine = gsap.timeline({
+            repeat: 1
+        })
+        words.forEach((word) =>{
+            const wordTimeLine = gsap.timeline({
+                repeat:1,
+                yoyo: true,
+                repeatDelay: 2
+            })
+            wordTimeLine.to("#typewriter",{
+                text:word,
+                duration: 1,
+                onUpdate: ()=>{
+                    cursorTimeLine.restart()
+                    cursorTimeLine.pause()
+                },
+                onComplete: ()=>{
+                    cursorTimeLine.play()
+                }
+            })
+            mainTimeLine.add(wordTimeLine)
+        })
+
+        // cursor tineline
+        const cursorTimeLine = gsap.timeline({
+            repeat: -1,
+            repeatDelay: 0.5
+        })
+
+        cursorTimeLine.to("#cursor",{
+            opacity: 1,
+            duration: 0
+        }).to("#cursor",{
+            opacity: 0,
+            duration: 0,  
+            delay: 0.5
+        })
+
+    </script>
+</body>
+</html>

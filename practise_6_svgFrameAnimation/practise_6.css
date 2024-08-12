@@ -1,0 +1,21 @@
+body{
+    background-color: rgb(44, 153, 255);
+    display: grid;
+    place-content: center;
+    height: 100vh;
+}
+
+.figure-container{
+    background-image: url("./luna-walking-sequence@c.svg");
+    width: 250px;
+    height: 400px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: 5s steps(7) figureMove infinite;
+}
+
+@keyframes figureMove {
+    to{
+        background-position: 100%;
+    }
+}

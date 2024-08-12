@@ -1,0 +1,19 @@
+body{
+    background-color: antiquewhite;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+div{
+    font-family: monospace;
+    font-weight: bolder;
+    font-size: 50px;
+    word-spacing: -20px;
+}
+
+#cursor{
+    margin-left: 0;
+}
+
